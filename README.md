@@ -36,3 +36,6 @@ Images
 * ![recipe 1/3](/img/r1.png)
 * ![recipe 2/3](/img/r2.png)
 * ![recipe 3/3](/img/r3.png)
+
+Recording
+* To see the recording, you're gonna have to download it [here](/img/recording.mov)
