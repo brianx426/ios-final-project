@@ -25,3 +25,14 @@ Obstacles I Faced
 * I did not know how to load an image from the web onto my app.
 * My MacBook was not a fan of Xcode at times (neither was I)
 * ![My activity monitor screen showing my ram being gobbled up](/img/xdd.png)
+
+
+Images
+* Home Screen
+* ![home screen](/img/home-screen.png)
+* Search Results Page
+* ![search results](/img/search-results.png)
+* Recipe Page
+* ![recipe 1/3](/img/r1.png)
+* ![recipe 2/3](/img/r2.png)
+* ![recipe 3/3](/img/r3.png)
