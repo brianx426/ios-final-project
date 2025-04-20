@@ -24,4 +24,4 @@ Obstacles I Faced
 * The struct for the API was a little annoying to work with because it listed up to 20 ingredients and the measurements for each ingredient separately.
 * I did not know how to load an image from the web onto my app.
 * My MacBook was not a fan of Xcode at times (neither was I)
-![My activity monitor screen showing my ram being gobbled up]()
+* ![My activity monitor screen showing my ram being gobbled up](/img/xdd.png)
