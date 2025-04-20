@@ -55,7 +55,6 @@ struct SearchResultsView : View {
         query = makeQueryValid(query: query)
         search(query: query)
         query = revertQuery(query: query)
-        
       }
     }
   }
@@ -63,6 +62,7 @@ struct SearchResultsView : View {
   private func makeQueryValid(query: String) -> String {
     return query.replacingOccurrences(of: " ", with: "%20")
   }
+  
   private func revertQuery(query: String) -> String {
     return query.replacingOccurrences(of: "%20", with: " ")
   }

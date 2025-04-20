@@ -10,7 +10,6 @@ import SwiftUI
 struct RecipeView : View {
   var recipe: Meal
   
-  
   var body: some View {
     
     ScrollView(.vertical) {
@@ -18,6 +17,7 @@ struct RecipeView : View {
         VStack {
           Text(recipe.strMeal)
             .font(.largeTitle)
+            .foregroundStyle(Color("headingColor"))
           
           AsyncImage(url: URL(string: "\(recipe.strMealThumb)/medium")) { phase in
             switch phase {
@@ -43,28 +43,48 @@ struct RecipeView : View {
           }
         }
         
-        
         VStack(alignment: .leading) {
           Text("What you'll need:")
             .font(.title)
             .bold()
+            .padding(.vertical)
+            .foregroundStyle(Color("headingColor"))
+            .shadow(radius: 8)
           
           ForEach(getIngredients(r: recipe), id: \.self) {ingredient in
             Text(ingredient)
               .padding(.leading)
               .font(.system(size: 20))
+              .padding(.bottom, 5)
           }
           
           Text("The process:")
-          HStack {
-            Image(systemName: "square")
-            Text(recipe.strInstructions)
-          }
-          Text("Congrats, you made \(recipe.strMeal)")
+            .font(.title)
+            .bold()
+            .padding(.vertical)
+            .foregroundStyle(Color("headingColor"))
+            .shadow(radius: 8)
+          Text(recipe.strInstructions)
+            .font(.system(size: 20))
+            .padding(.horizontal)
+            .padding(.bottom)
         }
-        .background(.white)
       }
     }
+    .onAppear {
+      let appearance = UINavigationBarAppearance()
+      appearance.backgroundColor = .orange
+      appearance.shadowColor = .clear
+      appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+      appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+      UINavigationBar.appearance().standardAppearance = appearance
+      UINavigationBar.appearance().scrollEdgeAppearance = appearance
+      UINavigationBar.appearance().tintColor = .white
+      
+    }
+    .navigationTitle(recipe.strMeal)
+    .navigationBarTitleDisplayMode(.inline)
+    
   }
   
   private func getIngredients(r: Meal) -> [String] {
@@ -171,6 +191,4 @@ struct RecipeView : View {
     }
     return ingredients
   }
-  
-  
 }

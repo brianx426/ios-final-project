@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SearchResultView: View {
   @State var meal: Meal
+  
   var body: some View {
     HStack {
       AsyncImage(url: URL(string: "\(meal.strMealThumb)/small")) { phase in

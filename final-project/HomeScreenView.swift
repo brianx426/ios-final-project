@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeScreenView : View {
-  @State private var searchFor: String = "tomato"
+  @State private var searchFor: String = ""
   @State private var randomMeal: Meal = MealService.fakeMeal
   
   var body: some View {
@@ -21,12 +21,10 @@ struct HomeScreenView : View {
           .ignoresSafeArea()
         VStack(alignment: .center) {
           
-          
           Text("Zis is a Recipe Tracker")
             .foregroundStyle(.white)
             .font(.system(size: 36))
             .padding(.vertical, 50)
-          
           
           HStack {
             TextField("", text: $searchFor)
@@ -39,6 +37,13 @@ struct HomeScreenView : View {
               .padding(.leading)
               .opacity(0.5)
               .textInputAutocapitalization(.never)
+              .overlay(
+                Text("Search for a Recipe")
+                  .font(.title2)
+                  .foregroundStyle(.white)
+                  .opacity(searchFor.isEmpty ? 0.75 : 0)
+                  .padding(.leading, 30), alignment: .leading
+              )
             
             NavigationLink {
               SearchResultsView(query: $searchFor)
@@ -54,10 +59,12 @@ struct HomeScreenView : View {
           }
           .padding(.top)
           .padding(.trailing)
+          
           Text("or")
             .font(.system(size: 24))
             .foregroundStyle(.white)
             .padding(.vertical)
+          
           NavigationLink {
             RecipeView(recipe: randomMeal)
           } label: {
