@@ -21,7 +21,7 @@ struct HomeScreenView : View {
           .ignoresSafeArea()
         VStack(alignment: .center) {
           
-          Text("Zis is a Recipe Tracker")
+          Text("Cookey")
             .foregroundStyle(.white)
             .font(.system(size: 36))
             .padding(.vertical, 50)
