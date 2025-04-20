@@ -1,4 +1,4 @@
-# iOS Bootcamp Final Project
+# Cookey - iOS Bootcamp Final Project
 
 This is a recipe searcher and tracker created with [themealdb's API](https://themealdb.com/api.php)
 
