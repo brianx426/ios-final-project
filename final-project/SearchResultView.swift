@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SearchResultView: View {
   @State var meal: Meal
+  @Environment(\.colorScheme) var colorScheme
   
   var body: some View {
     HStack {
@@ -36,7 +37,7 @@ struct SearchResultView: View {
       }
       .padding(.trailing)
       Text("\(meal.strMeal)")
-        .foregroundStyle(.black)
+        .foregroundStyle(colorScheme == .dark ? .white : .black)
         .font(.title2)
     }
   }
